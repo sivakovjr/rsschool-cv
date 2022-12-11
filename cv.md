@@ -18,7 +18,7 @@
 * *Git* - basics
 * *Javascript* - essentials
 5. Code examples  
-javascript
+```javascript
     const points = (games) => {
       return games.map(m => m.split(':').map(m => +m)).map(([a, b]) => {
         if (a === b) return 1;
@@ -26,3 +26,4 @@ javascript
         return 0;
       }).reduce((totalPoints, matchPoints) => totalPoints += matchPoints, 0)
     }
+```
