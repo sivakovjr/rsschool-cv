@@ -27,3 +27,9 @@
       }).reduce((totalPoints, matchPoints) => totalPoints += matchPoints, 0)
     }
 ```
+6. Source code (https://github.com/sivakovjr)
+7. Education: Polotsk State University 2019 - present
+8. Languages:
+* *English:* A2
+* *Belarussian:* B2
+* *Russian:* Native
