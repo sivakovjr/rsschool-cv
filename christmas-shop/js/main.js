@@ -116,3 +116,15 @@
     });
   });
 })();
+(function initBurger() { 
+  const burger = document.getElementById('burger'); 
+  const nav = document.getElementById('nav'); 
+  if (!burger || !nav) return; 
+ 
+  burger.addEventListener('click', () => { 
+    nav.classList.toggle('nav--open'); 
+    
+    const isOpen = nav.classList.contains('nav--open'); 
+    burger.setAttribute('aria-expanded', isOpen); 
+  }); 
+})(); 
