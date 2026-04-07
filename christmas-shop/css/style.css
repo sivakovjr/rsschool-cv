@@ -111,6 +111,8 @@ button {
   z-index: 100;
   background-color: var(--white);
   width: 100%;
+  /* needed so nav--open can position relative to header */
+  isolation: isolate;
 }
 
 .header__inner {
@@ -898,164 +900,179 @@ button {
 } 
 
 @media (max-width: 768px) {
-   .container { 
-    padding: 0 16px; 
-  } 
-   .best-gifts__inner, 
-  .slider-section__inner, 
-  .footer__inner { 
-    padding: 0 16px; 
-  } 
-} 
+  .container {
+    padding: 0 16px;
+  }
 
-   .footer { 
-    padding: 32px 16px 20px; 
-  } 
- 
-  
-  .footer__cards { 
-    flex-direction: column; 
-    gap: 12px; 
-  } 
- 
-  .footer__card { 
-    flex-direction: row;  
-    align-items: center; 
-    gap: 16px; 
-    padding: 16px 20px; 
-    justify-content: flex-start; 
-  } 
- 
-  .footer__card-icon { 
-    width: 56px; 
-    height: 56px; 
-    flex-shrink: 0; 
-  } 
+  .footer {
+    padding: 32px 16px 20px;
+  }
 
+  .footer__cards {
+    flex-direction: column;
+    gap: 12px;
+  }
 
+  .footer__card {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    justify-content: flex-start;
+  }
 
-   .cta { 
-    min-height: 420px; 
-  } 
- 
-  .cta__title { 
-    font-size: 20px; 
-    letter-spacing: 2px; 
-  } 
- 
-  .cta__inner { 
-    padding: 60px 16px; 
-  } 
- 
-  .timer__block { 
-    width: 60px; 
-  } 
- 
-  .timer__value { 
-    font-size: 18px; 
-  } 
+  .footer__card-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
 
+  .cta {
+    min-height: 420px;
+  }
 
-   .best-gifts { 
-    padding: 40px 16px; 
-  } 
- 
-  
-  .gift-card { 
-    width: calc(50% - 6px);  
-  } 
- 
-  .gift-card__image { 
-    width: 100%; 
-    height: 180px; 
-  } 
- 
- 
-    .slider-section { 
-    padding: 40px 16px; 
-  } 
- 
-  .slider-word { 
-    font-size: 52px; 
-    line-height: 64px; 
-  } 
- 
-  .slider-image { 
-    width: 150px; 
-    height: 150px; 
-  } 
- 
-  .section-subtitle { 
-    font-size: 22px; 
-    letter-spacing: 3px; 
-  } 
+  .cta__title {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
 
+  .cta__inner {
+    padding: 60px 16px;
+  }
 
-   .about { 
-    padding: 0 16px 40px; 
-  } 
- 
-   
-  .about__card { 
-    flex-direction: column; 
-  } 
- 
-  
-  .about__text-wrap { 
-    padding: 0 32px; 
-  } 
- 
-  .about__text-inner { 
-    max-width: 100%; 
-    padding: 40px 0 24px; 
-  } 
- 
-  .about__title { 
-    font-size: 22px; 
-  } 
- 
-  /* Фото под текстом */ 
-  .about__image-wrap { 
-    min-height: 300px; 
-    border-radius: 0 0 20px 20px;  
-  } 
+  .timer__block {
+    width: 60px;
+  }
 
+  .timer__value {
+    font-size: 18px;
+  }
 
-   .hero { 
-    min-height: 380px; 
-   } 
-     .hero__title { 
-    font-size: 24px; 
-    letter-spacing: 3px; 
-  } 
- 
-  .hero__caption { 
-    font-size: 22px; 
-  } 
- 
-  .hero__ball-bg { 
-    width: 80%;  
-  } 
- 
- .burger { 
-    display: flex; 
+  .best-gifts {
+    padding: 40px 16px;
+  }
+
+  .gift-card {
+    width: calc(50% - 6px);
+  }
+
+  .gift-card__image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .slider-section {
+    padding: 40px 16px;
+  }
+
+  .slider-word {
+    font-size: 52px;
+    line-height: 64px;
+  }
+
+  .slider-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .section-subtitle {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .about {
+    padding: 0 16px 40px;
+  }
+
+  .about__card {
+    flex-direction: column;
+  }
+
+  .about__text-wrap {
+    padding: 0 32px;
+  }
+
+  .about__text-inner {
+    max-width: 100%;
+    padding: 40px 0 24px;
+  }
+
+  .about__title {
+    font-size: 22px;
+  }
+
+  .about__image-wrap {
+    min-height: 300px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .hero {
+    min-height: 380px;
+  }
+
+  .hero__title {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  .hero__caption {
+    font-size: 22px;
+  }
+
+  .hero__ball-bg {
+    width: 80%;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+
+  .header__nav.nav--open {
+    display: flex;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    width: 100%;
+    padding: 12px 8px;
+    gap: 4px;
+  }
+
+  .header__nav-list li {
+    width: 100%;
+  }
+
+  .header__nav-link {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .best-gifts__inner,
+  .slider-section__inner,
+  .footer__inner {
+    padding: 0 16px;
+  }
 }
-    
-    .header__nav { 
-    display: none; 
-  } 
- 
-  .header__nav.nav--open { 
-    display: flex; 
-  } 
+
+  
  
  
 @media (max-width: 380px) {
     .container { 
     padding: 0 8px; 
   } 
-} 
-    .footer__card { 
+   .footer__card { 
     padding: 12px 16px; 
   } 
  
@@ -1114,10 +1131,7 @@ button {
   .about__image-wrap { 
     min-height: 220px; 
   } 
-
-
- 
-    .hero__title { 
+  .hero__title { 
     font-size: 18px; 
     letter-spacing: 2px; 
   } 
@@ -1125,3 +1139,5 @@ button {
   .hero__content { 
     padding: 40px 16px 40px; 
   } 
+} 
+   
