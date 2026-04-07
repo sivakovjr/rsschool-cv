@@ -123,8 +123,7 @@
  
   burger.addEventListener('click', () => { 
     nav.classList.toggle('nav--open'); 
-    
-    const isOpen = nav.classList.contains('nav--open'); 
+   const isOpen = nav.classList.contains('nav--open'); 
     burger.setAttribute('aria-expanded', isOpen); 
   }); 
 })(); 
