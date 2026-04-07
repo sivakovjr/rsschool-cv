@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gifts - Christmas Shop</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+  
+  <header class="header">
+  <div class="header__inner">
+    
+    <a href="../index.html" class="header__logo">
+      <img class="header__logo-icon" src="../assets/snowflake.svg" alt="snowflake">
+      <span class="header__logo-text">The Gifts</span>
+    </a>
+
+    
+    <button class="burger" id="burger" aria-label="Open menu"> 
+      <span class="burger__line"></span> 
+      <span class="burger__line"></span> 
+      <span class="burger__line"></span>
+    </button> 
+
+    
+    <nav class="header__nav" id="nav"> 
+      <ul class="header__nav-list">
+        <li><span class="header__nav-link header__nav-link--active">Gifts</span></li>
+        <li><a href="../index.html#about" class="header__nav-link">About</a></li>
+        <li><a href="../index.html#best" class="header__nav-link">Best</a></li>
+        <li><a href="#contacts" class="header__nav-link">Contacts</a></li>
+      </ul>
+    </nav> 
+  </div>
+</header>
+
+
+  <main>
+
+  
+    <section class="gifts-section">
+
+     
+      <div class="gifts-section__garland">
+        <img src="../assets/bg-garland.png" alt="">
+      </div>
+
+      <div class="gifts-section__inner">
+        <div class="gifts-section__header">
+          <h1 class="gifts-section__title">Achieve health, harmony, and inner strength</h1>
+        </div>
+
+        
+        <div class="tabs" role="tablist">
+          <button class="tab tab--active" data-filter="all" aria-selected="true">All</button>
+          <button class="tab" data-filter="work" aria-selected="false">For Work</button>
+          <button class="tab" data-filter="health" aria-selected="false">For Health</button>
+          <button class="tab" data-filter="harmony" aria-selected="false">For Harmony</button>
+        </div>
+
+       
+        <div class="gifts-grid" id="giftsGrid">
+
+          <div class="gift-card" data-category="work">
+            <div class="gift-card__image">
+              <img src="../assets/card-work.png" alt="Console.log Guru">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--work">For work</span>
+              <span class="gift-card__name">Console.log Guru</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="health">
+            <div class="gift-card__image">
+              <img src="../assets/card-health.png" alt="Step Master">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--health">For health</span>
+              <span class="gift-card__name">Step Master</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="work">
+            <div class="gift-card__image">
+              <img src="../assets/card-work.png" alt="Bug Magnet">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--work">For work</span>
+              <span class="gift-card__name">Bug Magnet</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="work">
+            <div class="gift-card__image">
+              <img src="../assets/card-work.png" alt="Shortcut Cheater">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--work">For work</span>
+              <span class="gift-card__name">Shortcut Cheater</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="health">
+            <div class="gift-card__image">
+              <img src="../assets/card-health.png" alt="Posture Levitation">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--health">For health</span>
+              <span class="gift-card__name">Posture Levitation</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="harmony">
+            <div class="gift-card__image">
+              <img src="../assets/card-harmony.png" alt="Bug Acceptance Guru">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--harmony">For harmony</span>
+              <span class="gift-card__name">Bug Acceptance Guru</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="health">
+            <div class="gift-card__image">
+              <img src="../assets/card-health.png" alt="Snack Resister">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--health">For health</span>
+              <span class="gift-card__name">Snack Resister</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="harmony">
+            <div class="gift-card__image">
+              <img src="../assets/card-harmony2.png" alt="Error Laugher">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--harmony">For harmony</span>
+              <span class="gift-card__name">Error Laugher</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="health">
+            <div class="gift-card__image">
+              <img src="../assets/card-health.png" alt="Hydration Bot">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--health">For health</span>
+              <span class="gift-card__name">Hydration Bot</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="work">
+            <div class="gift-card__image">
+              <img src="../assets/card-work.png" alt="Merge Master">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--work">For work</span>
+              <span class="gift-card__name">Merge Master</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="harmony">
+            <div class="gift-card__image">
+              <img src="../assets/card-harmony.png" alt="Joy Charger">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--harmony">For harmony</span>
+              <span class="gift-card__name">Joy Charger</span>
+            </div>
+          </div>
+
+          <div class="gift-card" data-category="harmony">
+            <div class="gift-card__image">
+              <img src="../assets/card-harmony.png" alt="Spontaneous Coding Philosopher">
+            </div>
+            <div class="gift-card__info">
+              <span class="gift-card__tag gift-card__tag--harmony">For harmony</span>
+              <span class="gift-card__name">Spontaneous Coding Philosopher</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer id="contacts" class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__cards">
+
+        <a href="tel:+375291112233" class="footer__card">
+          <div class="footer__card-icon">
+            <img src="../assets/footer-santa.svg" alt="Santa Claus">
+          </div>
+          <span class="footer__card-value">+375 (29) 111-22-33</span>
+          <span class="footer__card-label">Call Us</span>
+        </a>
+
+        <a href="https://maps.google.com/?q=Belovezhskaya+Pushcha" target="_blank" rel="noopener" class="footer__card">
+          <div class="footer__card-icon">
+            <img src="../assets/footer-tree.svg" alt="Christmas Tree">
+          </div>
+          <span class="footer__card-value">Magic Forest</span>
+          <span class="footer__card-label">Meet Us</span>
+        </a>
+
+        <a href="mailto:gifts@magic.com" class="footer__card">
+          <div class="footer__card-icon">
+            <img src="../assets/footer-snake.svg" alt="Snake">
+          </div>
+          <span class="footer__card-value">gifts@magic.com</span>
+          <span class="footer__card-label">Write Us</span>
+        </a>
+
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__bottom-center">
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link">
+              <img src="../assets/icon-telegram.svg" alt="Telegram">
+            </a>
+            <a href="#" class="footer__social-link">
+              <img src="../assets/icon-facebook.svg" alt="Facebook">
+            </a>
+            <a href="#" class="footer__social-link">
+              <img src="../assets/icon-instagram.svg" alt="Instagram">
+            </a>
+            <a href="#" class="footer__social-link">
+              <img src="../assets/icon-x.svg" alt="X">
+            </a>
+          </div>
+          <p class="footer__copyright">© Copyright 2025, All Rights Reserved</p>
+          <a href="https://rs.school/" target="_blank" rel="noopener" class="footer__rss-link">Made in Rolling Scopes School</a>
+          <span class="footer__rss-accent"></span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>
