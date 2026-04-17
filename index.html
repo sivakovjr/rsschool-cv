@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yan Sivakov — Frontend Developer CV</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&family=DM+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <img src="https://i.yapx.ru/dQEaD.jpg" alt="Yan Sivakov photo" class="avatar">
+    <div>
+      <h1>Yan Sivakov</h1>
+      <p class="role">Frontend Developer</p>
+      <p class="intro">Mechanical engineering graduate turned frontend developer. Passionate about building clean, accessible web experiences. Currently enrolled in RS School to grow as a JavaScript engineer and land my first dev role.</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <nav>
+        <h2>Navigation</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#code">Code Example</a></li>
+          <li><a href="#education">Education</a></li>
+        </ul>
+      </nav>
+
+      <section id="contacts">
+        <h2>Contacts</h2>
+        <ul>
+          <li><a href="https://github.com/sivakovjr" target="_blank">
+          <img src="https://i.pinimg.com/200x/b3/fd/1a/b3fd1a2c6b730fadc0c107c2488122ac.jpg" width="40" alt="git hub logo" class="git-logo"></a></li>
+          <li><a href="https://www.instagram.com/sivakovjr" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="40" alt="insta logo" class="insta-logo"></a></li>
+          <li><a href="https://vk.com/sivakovjr" target="_blank">
+          <img src="https://img.icons8.com/fluent-systems-regular/600/vkontakte.png" width="40" alt="vk logo" class="vk-logo"></a></li>
+          <li>Polotsk, Belarus</li>
+        </ul>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+         <li>Git / GitHub</li>
+         <li>Markdown</li>
+         <li>English — A2/B1</li>
+        </ul>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <strong>Polotsk State University</strong><br>
+            Mechanical Engineering, 2019–2024
+          </li>
+        </ul>
+      </section>
+    </aside>
+
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Yan Sivakov. I studied mechanical engineering at Polotsk State University, but found my true passion in web development. I began self-studying HTML, CSS and JavaScript, and joined RS School to deepen my skills. I am disciplined and goal-oriented — qualities sharpened by years of competitive football. I played seriously since 2014 until an injury in 2020, and continue in amateur leagues for Polotsk-2019. I am actively building projects and seeking my first frontend developer position.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <strong>RS School CV</strong> — Markdown-based personal CV built as part of RS School Stage 0.
+            <br><a href="https://sivakovjr.github.io/rsschool-cv/cv" target="_blank">Live page</a> &nbsp;·&nbsp;
+            <a href="https://github.com/sivakovjr/rsschool-cv" target="_blank">Source code</a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="code">
+        <h2>Code Example</h2>
+        <p>Toggle a CSS class on button click:</p>
+        <pre><code>const btn = document.querySelector('.toggle-btn');
+const box = document.querySelector('.box');
+
+btn.addEventListener('click', () => {
+  box.classList.toggle('active');
+});
+
+// CSS handles the visual state:
+// .box.active {
+//   background: #e94560;
+//   transform: scale(1.05);
+// }</code></pre>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <a href="https://github.com/sivakovjr" target="_blank">
+    <img src="https://i.pinimg.com/200x/b3/fd/1a/b3fd1a2c6b730fadc0c107c2488122ac.jpg" width="40" alt="git hub logo" class="git-logo"></a>
+    <span>© 2026</span>
+    <a href="https://rs.school/" target="_blank">
+    <img src="https://d3373sevsv1jc.cloudfront.net/uploads/communities_production/page_meta_tag/image/2156/fc2739e6-a8f7-4107-a88e-c53438dbc95e.png" alt="RS School logo" class="rs-logo">
+    </a>
+  </footer>
+
+</div>
+</body>
+</html>
