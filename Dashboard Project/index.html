@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outsource Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <button class="sidebar-toggle" id="sidebarToggle" title="Toggle menu">☰</button>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="period-selector">
+      <h3>Период</h3>
+      <div class="period-field">
+        <select id="monthSelect" class="period-select"></select>
+      </div>
+      <div class="period-field">
+        <select id="yearSelect" class="period-select"></select>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#projects" onclick="closeSidebar()">Проекты</a></li>
+      <li><a href="#employees" onclick="closeSidebar()">Сотрудники</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content" id="mainContent">
+
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <div class="section-actions">
+          <button class="btn btn-primary" id="addProjectBtn">+ Add Project</button>
+          <button class="btn btn-secondary" id="seedDataBtn">Seed Data</button>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table" id="projectsTable">
+          <thead>
+            <tr>
+              <th onclick="sortBy('projects','company')">Company Name <span class="sort-icon">⇅</span> <span class="search-icon" onclick="toggleSearch(event,'pCompany')">⌕</span></th>
+              <th onclick="sortBy('projects','name')">Project Name <span class="sort-icon">⇅</span> <span class="search-icon" onclick="toggleSearch(event,'pName')">⌕</span></th>
+              <th onclick="sortBy('projects','budget')">Budget <span class="sort-icon">⇅</span></th>
+              <th onclick="sortBy('projects','capacity')">Employee Capacity <span class="sort-icon">⇅</span></th>
+              <th>Employees</th>
+              <th onclick="sortBy('projects','income')">Estimated Income <span class="sort-icon">⇅</span></th>
+              <th>Actions</th>
+            </tr>
+            <tr class="search-row" id="projectSearchRow">
+              <td><input type="text" id="pCompany" class="search-input" placeholder="Search company..." oninput="renderAll()" /></td>
+              <td><input type="text" id="pName" class="search-input" placeholder="Search project..." oninput="renderAll()" /></td>
+              <td colspan="5"></td>
+            </tr>
+          </thead>
+          <tbody id="projectsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="employees" class="section">
+      <div class="section-header">
+        <h2>Employees</h2>
+        <button class="btn btn-primary" id="addEmployeeBtn">+ Add Employee</button>
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table" id="employeesTable">
+          <thead>
+            <tr>
+              <th onclick="sortBy('employees','name')">Name <span class="sort-icon">⇅</span> <span class="search-icon" onclick="toggleSearch(event,'eName')">⌕</span></th>
+              <th onclick="sortBy('employees','surname')">Surname <span class="sort-icon">⇅</span> <span class="search-icon" onclick="toggleSearch(event,'eSurname')">⌕</span></th>
+              <th onclick="sortBy('employees','age')">Age <span class="sort-icon">⇅</span></th>
+              <th onclick="sortBy('employees','position')">Position <span class="sort-icon">⇅</span> <span class="search-icon" onclick="toggleSearch(event,'ePosition')">⌕</span></th>
+              <th onclick="sortBy('employees','salary')">Salary <span class="sort-icon">⇅</span></th>
+              <th onclick="sortBy('employees','payment')">Estimated Payment <span class="sort-icon">⇅</span></th>
+              <th onclick="sortBy('employees','project')">Project <span class="sort-icon">⇅</span> <span class="search-icon" onclick="toggleSearch(event,'eProject')">⌕</span></th>
+              <th onclick="sortBy('employees','income')">Projected Income <span class="sort-icon">⇅</span></th>
+              <th>Actions</th>
+            </tr>
+            <tr class="search-row" id="employeeSearchRow">
+              <td><input type="text" id="eName" class="search-input" placeholder="Search name..." oninput="renderAll()" /></td>
+              <td><input type="text" id="eSurname" class="search-input" placeholder="Search surname..." oninput="renderAll()" /></td>
+              <td></td>
+              <td><input type="text" id="ePosition" class="search-input" placeholder="Search position..." oninput="renderAll()" /></td>
+              <td></td><td></td>
+              <td><input type="text" id="eProject" class="search-input" placeholder="Search project..." oninput="renderAll()" /></td>
+              <td colspan="2"></td>
+            </tr>
+          </thead>
+          <tbody id="employeesBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: Project detail employees -->
+  <div class="modal" id="projectDetailModal">
+    <div class="modal-overlay" id="projectDetailOverlay"></div>
+    <div class="modal-content modal-xl">
+      <div class="modal-title-row">
+        <h3 id="projectDetailTitle">Project Employees</h3>
+        <button class="modal-close" id="closeProjectDetailBtn">&times;</button>
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table" id="projectDetailTable">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Capacity</th>
+              <th>Fit</th>
+              <th>Vacation</th>
+              <th>Effective</th>
+              <th>Revenue</th>
+              <th>Cost</th>
+              <th>Profit</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projectDetailBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Add employee -->
+  <div class="modal" id="employeeModal">
+    <div class="modal-overlay" id="employeeOverlay"></div>
+    <div class="modal-content">
+      <h3>Add New Employee</h3>
+      <form id="employeeForm" novalidate>
+        <div class="form-group">
+          <label for="empName">Name: <span class="required">*</span></label>
+          <input type="text" id="empName" placeholder="Enter name" autocomplete="off" />
+          <span class="error-msg" id="empNameError">Name must be at least 3 characters and contain only letters</span>
+        </div>
+        <div class="form-group">
+          <label for="empSurname">Surname: <span class="required">*</span></label>
+          <input type="text" id="empSurname" placeholder="Enter surname" autocomplete="off" />
+          <span class="error-msg" id="empSurnameError">Surname must be at least 3 characters and contain only letters</span>
+        </div>
+        <div class="form-group">
+          <label for="empDob">Date of Birth: <span class="required">*</span></label>
+          <input type="date" id="empDob" />
+          <span class="error-msg" id="empDobError">You must be at least 18 years old</span>
+        </div>
+        <div class="form-group">
+          <label for="empPosition">Position: <span class="required">*</span></label>
+          <select id="empPosition">
+            <option value="">Select position</option>
+            <option value="Junior">Junior</option>
+            <option value="Middle">Middle</option>
+            <option value="Senior">Senior</option>
+            <option value="Lead">Lead</option>
+            <option value="Architect">Architect</option>
+            <option value="BO">BO</option>
+          </select>
+          <span class="error-msg" id="empPositionError">Please select a position</span>
+        </div>
+        <div class="form-group">
+          <label for="empSalary">Salary: <span class="required">*</span></label>
+          <input type="number" id="empSalary" min="1" placeholder="0" />
+          <span class="error-msg" id="empSalaryError">Salary must be greater than 0</span>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-secondary" id="cancelEmployeeBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Add project -->
+  <div class="modal" id="projectModal">
+    <div class="modal-overlay" id="projectOverlay"></div>
+    <div class="modal-content">
+      <h3>Add New Project</h3>
+      <form id="projectForm" novalidate>
+        <div class="form-group">
+          <label for="projName">Project Name: <span class="required">*</span></label>
+          <input type="text" id="projName" autocomplete="off" />
+          <span class="error-msg" id="projNameError">Project name must be at least 3 characters</span>
+        </div>
+        <div class="form-group">
+          <label for="projCompany">Company Name: <span class="required">*</span></label>
+          <input type="text" id="projCompany" autocomplete="off" />
+          <span class="error-msg" id="projCompanyError">Company name must be at least 2 characters</span>
+        </div>
+        <div class="form-group">
+          <label for="projBudget">Budget: <span class="required">*</span></label>
+          <input type="number" id="projBudget" min="1" placeholder="0" />
+          <span class="error-msg" id="projBudgetError">Budget must be greater than 0</span>
+        </div>
+        <div class="form-group">
+          <label for="projCapacity">Employee Capacity: <span class="required">*</span></label>
+          <input type="number" id="projCapacity" min="1" placeholder="1" />
+          <span class="error-msg" id="projCapacityError">Employee capacity must be at least 1</span>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-secondary" id="cancelProjectBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Seed Data -->
+  <div class="modal" id="seedModal">
+    <div class="modal-overlay" id="seedOverlay"></div>
+    <div class="modal-content modal-wide">
+      <div class="modal-title-row">
+        <h3>Seed Data from Month</h3>
+        <button class="modal-close" id="closeSeedBtn">&times;</button>
+      </div>
+      <p class="seed-desc">Select a month to copy its data to the current month (<span id="currentMonthLabel"></span>):</p>
+      <div class="table-wrapper">
+        <table class="data-table" id="seedTable">
+          <thead>
+            <tr>
+              <th>Year</th><th>Month</th><th>Projects</th>
+              <th>Employees</th><th>Total Est. Income</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="seedBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
